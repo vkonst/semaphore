@@ -13,15 +13,15 @@ const wasmFilePath = path.join("./zkeyFiles", "semaphore.wasm")
 const finalZkeyPath = path.join("./zkeyFiles", "semaphore_final.zkey")
 let SemaphoreContract;
 
-beforeAll(async () => {
-    const provider = new ethers.providers.JsonRpcProvider("http://localhost:8545");
-    const signer = new ethers.Wallet(pk, provider);
+// beforeAll(async () => {
+//     const provider = new ethers.providers.JsonRpcProvider("http://localhost:8545");
+//     const signer = new ethers.Wallet(pk, provider);
 
-    SemaphoreContract = new ethers.Contract(SemaphoreInfo.address, SemaphoreInfo.abi, provider);
-    SemaphoreContract = SemaphoreContract.connect(signer);
-})
+//     SemaphoreContract = new ethers.Contract(SemaphoreInfo.address, SemaphoreInfo.abi, provider);
+//     SemaphoreContract = SemaphoreContract.connect(signer);
+// })
 
-test('Should create semaphore full proof', async () => {
+test.skip('Should create semaphore full proof', async () => {
     const identity = new ZkIdentity();
     const identityCommitment = identity.genIdentityCommitment();
 
